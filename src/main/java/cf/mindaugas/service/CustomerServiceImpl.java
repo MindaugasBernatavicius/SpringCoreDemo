@@ -2,17 +2,14 @@ package cf.mindaugas.service;
 
 import java.util.List;
 
-import com.pluralsight.model.Customer;
-import com.pluralsight.repository.CustomerRepository;
-import com.pluralsight.repository.HibernateCustomerRepositoryImpl;
+import cf.mindaugas.model.Customer;
+import cf.mindaugas.repository.CustomerRepository;
+import cf.mindaugas.repository.HibernateCustomerRepositoryImpl;
 
 public class CustomerServiceImpl implements CustomerService {
 
 	private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
-	
-	/* (non-Javadoc)
-	 * @see com.pluralsight.service.CustomerService#findAll()
-	 */
+
 	@Override
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
