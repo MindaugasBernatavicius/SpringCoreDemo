@@ -1,8 +1,8 @@
-package cf.mindaugas;
+package cf.mindaugas.nospring;
 
 
-import cf.mindaugas.service.CustomerService;
-import cf.mindaugas.service.CustomerServiceImpl;
+import cf.mindaugas.nospring.service.CustomerService;
+import cf.mindaugas.nospring.service.CustomerServiceImpl;
 
 public class Application {
 

@@ -1,8 +1,8 @@
-package cf.mindaugas.repository;
+package cf.mindaugas.nospring.repository;
 
 import java.util.List;
 
-import cf.mindaugas.model.Customer;
+import cf.mindaugas.nospring.model.Customer;
 
 public interface CustomerRepository {
 	List<Customer> findAll();

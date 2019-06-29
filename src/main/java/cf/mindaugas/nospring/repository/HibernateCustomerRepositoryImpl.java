@@ -1,9 +1,9 @@
-package cf.mindaugas.repository;
+package cf.mindaugas.nospring.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cf.mindaugas.model.Customer;
+import cf.mindaugas.nospring.model.Customer;
 
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 

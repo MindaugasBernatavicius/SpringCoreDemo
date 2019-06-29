@@ -1,10 +1,10 @@
-package cf.mindaugas.service;
+package cf.mindaugas.nospring.service;
 
 import java.util.List;
 
-import cf.mindaugas.model.Customer;
-import cf.mindaugas.repository.CustomerRepository;
-import cf.mindaugas.repository.HibernateCustomerRepositoryImpl;
+import cf.mindaugas.nospring.model.Customer;
+import cf.mindaugas.nospring.repository.CustomerRepository;
+import cf.mindaugas.nospring.repository.HibernateCustomerRepositoryImpl;
 
 public class CustomerServiceImpl implements CustomerService {
 

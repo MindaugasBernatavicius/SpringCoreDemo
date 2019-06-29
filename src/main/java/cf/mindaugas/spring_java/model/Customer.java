@@ -1,4 +1,4 @@
-package cf.mindaugas.model;
+package cf.mindaugas.spring_java.model;
 
 public class Customer {
 
