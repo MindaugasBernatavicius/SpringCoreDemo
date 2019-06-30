@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean name="hCustRep" class="cf.mindaugas.spring_xml2.repository.HibernateCustomerRepositoryImpl" />
+    <bean name="memCustRep" class="cf.mindaugas.spring_xml2.repository.InMemoryRepositoryImpl" />
+
+    <!--Setter injection -->
+    <!--We describe this as: "wiring beans by name using setter injection" -->
+    <bean name="customerService" class="cf.mindaugas.spring_xml2.service.CustomerServiceImpl">
+        <property name="customerRepository" ref="memCustRep"/>
+    </bean>
+
+</beans>
