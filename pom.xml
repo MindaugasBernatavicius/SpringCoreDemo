@@ -51,7 +51,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>cf.mindaugas.spring_xml.Application</mainClass>
+                            <mainClass>cf.mindaugas.spring_xml_minimal.Application</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

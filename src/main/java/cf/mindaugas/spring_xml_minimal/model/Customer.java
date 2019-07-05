@@ -1,4 +1,4 @@
-package cf.mindaugas.spring_xml2.model;
+package cf.mindaugas.spring_xml_minimal.model;
 
 public class Customer {
 
