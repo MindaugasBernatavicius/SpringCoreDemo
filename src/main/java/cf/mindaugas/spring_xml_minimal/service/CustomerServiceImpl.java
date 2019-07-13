@@ -11,11 +11,14 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
 	// used for setter injection
-	// public void setCustomerRepository(CustomerRepository customerRepository) {
-	// 	this.customerRepository = customerRepository;
-	// }
+	public void setCustomerRepository(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
+	}
 
-    // used for constructor injection
+	public CustomerServiceImpl() {
+	}
+
+	// used for constructor injection
 	public CustomerServiceImpl(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
