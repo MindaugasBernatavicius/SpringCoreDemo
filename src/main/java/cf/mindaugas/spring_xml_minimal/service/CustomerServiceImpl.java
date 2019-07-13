@@ -16,8 +16,6 @@ public class CustomerServiceImpl implements CustomerService {
 	// }
 
     // used for constructor injection
-    public CustomerServiceImpl() { }
-
 	public CustomerServiceImpl(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}

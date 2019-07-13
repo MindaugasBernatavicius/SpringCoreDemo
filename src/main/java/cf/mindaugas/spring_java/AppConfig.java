@@ -10,41 +10,70 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
+// // setter injection
+// @Configuration
+// public class AppConfig {
+//
+//     @Bean(name = "customerRepository")
+//     public CustomerRepository getCustomerRepository(){
+//         return new HibernateCustomerRepositoryImpl();
+//     }
+//
+//     @Bean(name = "customerService")
+//     public CustomerService getCustomerService(){
+//         CustomerServiceImpl customerService = new CustomerServiceImpl();
+//         customerService.setCustomerRepository(getCustomerRepository());
+//         return customerService;
+//     }
+// }
+
+// // constructor injection
+// @Configuration
+// public class AppConfig {
+//
+//     @Bean(name = "customerRepository")
+//     public CustomerRepository getCustomerRepository(){
+//         return new HibernateCustomerRepositoryImpl();
+//     }
+//
+//     @Bean(name = "customerService")
+//     public CustomerService getCustomerService(){
+//         CustomerServiceImpl customerService = new CustomerServiceImpl(getCustomerRepository());
+//         return customerService;
+//     }
+// }
+
+// // autowirring
+// @Configuration
+// @ComponentScan({"cf.mindaugas.spring_java"})
+// public class AppConfig {
+//
+//     @Bean(name = "customerRepository")
+//     public CustomerRepository getCustomerRepository(){
+//         return new HibernateCustomerRepositoryImpl();
+//     }
+//
+//     @Bean(name = "customerService")
+//     public CustomerService getCustomerService(){
+//         CustomerServiceImpl customerService = new CustomerServiceImpl();
+//         return customerService;
+//     }
+// }
+
+// autowirring
+// @Configuration
+// @ComponentScan({"cf.mindaugas.spring_java"})
+// public class AppConfig { }
+
+
 @Configuration
 @ComponentScan({"cf.mindaugas.spring_java"})
 @PropertySource("app.properties")
 public class AppConfig {
-
-    // setter injection
-    // @Bean(name = "customerService")
-    // public CustomerService getCustomerService(){
-    //     CustomerServiceImpl customerService = new CustomerServiceImpl();
-    //     customerService.setCustomerRepository(getCustomerRepository());
-    //     return customerService;
+    // @Bean // not strictly needed - resolve ${…} placeholders
+    // within bean definition property values and @Value annotations
+    // public static
+    // PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer(){
+    //     return new PropertySourcesPlaceholderConfigurer();
     // }
-
-    // constructor injection
-    // @Bean(name = "customerService")
-    // public CustomerService getCustomerService(){
-    //     CustomerServiceImpl customerService = new CustomerServiceImpl(getCustomerRepository());
-    //     return customerService;
-    // }
-
-    // autowiring
-    // @Bean(name = "customerService")
-    // public CustomerService getCustomerService(){
-    //     CustomerServiceImpl customerService = new CustomerServiceImpl();
-    //     return customerService;
-    // }
-    //
-    // @Bean(name = "customerRepository")
-    // public CustomerRepository getCustomerRepository(){
-    //     return new HibernateCustomerRepositoryImpl();
-    // }
-
-    // Properties file
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer(){
-        return new PropertySourcesPlaceholderConfigurer();
-    }
 }

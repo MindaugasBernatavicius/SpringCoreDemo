@@ -2,10 +2,12 @@ package cf.mindaugas.spring_java.repository;
 
 import cf.mindaugas.spring_annotations.model.Customer;
 import cf.mindaugas.spring_annotations.repository.CustomerRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+// @Repository("customerRepository")
 public class InMemoryRepositoryImpl implements CustomerRepository {
 
     @Override

@@ -7,22 +7,29 @@ import java.util.List;
 
 public class CustomerServiceImpl implements CustomerService {
 
-	private CustomerRepository customerRepository;
+    // setter injection
+	// private CustomerRepository customerRepository;
+    // public void setCustomerRepository(CustomerRepository customerRepository) {
+    //     this.customerRepository = customerRepository;
+    // }
 
-	// used for setter injection
-    public void setCustomerRepository(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
+    //  autowire by name
+    // private CustomerRepository customerRepository;
     // public void sethCustRep(CustomerRepository customerRepository) {
     //     this.customerRepository = customerRepository;
     // }
 
-    // used for constructor injection
-    public CustomerServiceImpl() { }
-
+    // constructor injection and autowire by constructor
+    private CustomerRepository customerRepository;
     public CustomerServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
+
+    // // byType
+    // private CustomerRepository customerRepository;
+    // public void setCustomerRepository(CustomerRepository customerRepository) {
+    //     this.customerRepository = customerRepository;
+    // }
 
     @Override
 	public List<Customer> findAll() {

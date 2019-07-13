@@ -8,7 +8,7 @@ import java.util.List;
 
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
-    // @Value("${dbUsername}")
+    @Value("${dbUsername}")
 	private String dbUsername;
 
     public void setDbUsername(String dbUsername) {
@@ -22,10 +22,10 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 		Customer customer = new Customer();
 		
 		customer.setFirstname("Jonas");
-		customer.setLastname((dbUsername == null || dbUsername.equals("")) ? "Jonaitis" : dbUsername);
-		
+		customer.setLastname(
+				(dbUsername == null || dbUsername.equals(""))
+                        ? "Jonaitis" : dbUsername);
 		customers.add(customer);
-		
 		return customers;
 	}
 }

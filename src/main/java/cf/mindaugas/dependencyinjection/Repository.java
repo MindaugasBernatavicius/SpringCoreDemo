@@ -1,4 +1,3 @@
 package cf.mindaugas.dependencyinjection;
 
-public interface Repository {
-}
+public interface Repository { }

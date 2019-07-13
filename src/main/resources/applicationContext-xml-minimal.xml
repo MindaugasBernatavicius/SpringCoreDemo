@@ -4,18 +4,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="hCustRep" class="cf.mindaugas.spring_xml_minimal.repository.HibernateCustomerRepositoryImpl" />
-    <bean name="memCustRep" class="cf.mindaugas.spring_xml_minimal.repository.InMemoryRepositoryImpl" />
+    <bean name="hrep" class="cf.mindaugas.spring_xml_minimal.repository.HibernateCustomerRepositoryImpl" />
+    <bean name="memrep" class="cf.mindaugas.spring_xml_minimal.repository.InMemoryRepositoryImpl" />
 
     <!--Setter injection -->
     <!--We describe this as: "wiring beans by name using setter injection" -->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml_minimal.service.CustomerServiceImpl">-->
-        <!--<property name="customerRepository" ref="hCustRep"/>-->
-    <!--</bean>-->
+    <bean name="customerService" class="cf.mindaugas.spring_xml_minimal.service.CustomerServiceImpl">
+        <property name="customerRepository" ref="hrep"/>
+    </bean>
 
     <!--Constructor injection-->
     <!--<bean name="customerService" class="cf.mindaugas.spring_xml_minimal.service.CustomerServiceImpl">-->
-        <!--<constructor-arg index="0" ref="hCustRep"/>-->
+        <!--<constructor-arg index="0" ref="hrep"/>-->
     <!--</bean>-->
 
 </beans>

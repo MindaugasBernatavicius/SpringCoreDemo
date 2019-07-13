@@ -12,7 +12,7 @@
 
      <!--Setter injection -->
      <!--We describe this as: "wiring beans by name using setter injection" -->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" scope="prototype">-->
+    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl">-->
         <!--<property name="customerRepository" ref="memCustRep"/>-->
     <!--</bean>-->
 
@@ -22,21 +22,27 @@
         <!--&lt;!&ndash; you could use an additional propety tag to add a setter injection here as well &ndash;&gt;-->
     <!--</bean>-->
 
-    <!-- Autowiring by constructor, name, type -->
+    <!-- Autowiring by constructor -->
     <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" autowire="constructor" />-->
-    <!-- By Name uses name of the setter, byType will not work if there are multiple possible matches of the type -->
+    <!-- byName - uses name of the setter -->
     <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" autowire="byName" />-->
+    <!-- byType will not work if there are multiple possible matches of the type-->
+    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" autowire="byType" />-->
+
+    <!-- bean scopes: prototype and singletone -->
+    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" scope="prototype">-->
+        <!--<property name="customerRepository" ref="memCustRep"/>-->
+    <!--</bean>-->
 
 
     <!-- Properties file demo -->
     <!-- ... if you want to use @Value("${dbUsername}") you will need to uncomment the line just below -->
-    <!--<context:annotation-config/>-->
+    <context:annotation-config/>
     <context:property-placeholder location="app.properties"/>
 
     <bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" autowire="constructor" />
-
     <bean name="customerRepository" class="cf.mindaugas.spring_xml.repository.HibernateCustomerRepositoryImpl">
-        <property name="dbUsername" value="${dbUsername}" />
+        <!--<property name="dbUsername" value="${dbUsername}" />-->
     </bean>
 
 </beans>
