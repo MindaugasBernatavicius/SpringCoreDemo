@@ -5,19 +5,19 @@
                         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean name="hrep"
-          class="cf.mindaugas.spring_xml_minimal.repository.HibernateCustomerRepositoryImpl" />
+          class="cf.mindaugas._03_spring_xml_minimal.repository.HibernateCustomerRepositoryImpl" />
     <bean name="memrep"
-          class="cf.mindaugas.spring_xml_minimal.repository.InMemoryRepositoryImpl" />
+          class="cf.mindaugas._03_spring_xml_minimal.repository.InMemoryRepositoryImpl" />
 
     <!--Setter injection -->
     <!--We describe this as: "wiring beans by name using setter injection" -->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml_minimal.service.CustomerServiceImpl">-->
+    <!--<bean name="customerService" class="cf.mindaugas._03_spring_xml_minimal.service.CustomerServiceImpl">-->
         <!--<property name="customerRepository" ref="hrep"/>-->
     <!--</bean>-->
 
     <!--Constructor injection-->
     <bean name="customerService"
-          class="cf.mindaugas.spring_xml_minimal.service.CustomerServiceImpl">
+          class="cf.mindaugas._03_spring_xml_minimal.service.CustomerServiceImpl">
         <constructor-arg index="0" ref="memrep"/>
         <constructor-arg index="1" value="Mindaugas"/>
     </bean>

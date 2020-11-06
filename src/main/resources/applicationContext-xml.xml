@@ -7,33 +7,33 @@
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--<bean name="hCustRep" class="cf.mindaugas.spring_xml.repository.HibernateCustomerRepositoryImpl" />-->
+    <!--<bean name="hCustRep" class="cf.mindaugas._04_spring_xml.repository.HibernateCustomerRepositoryImpl" />-->
     <bean name="memCustRep"
-          class="cf.mindaugas.spring_xml.repository.InMemoryRepositoryImpl" />
+          class="cf.mindaugas._04_spring_xml.repository.InMemoryRepositoryImpl" />
 
      <!--Setter injection -->
      <!--We describe this as: "wiring beans by name using setter injection" -->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl">-->
+    <!--<bean name="customerService" class="cf.mindaugas._04_spring_xml.service.CustomerServiceImpl">-->
         <!--<property name="customerRepository" ref="memCustRep"/>-->
     <!--</bean>-->
 
     <!-- Constructor injection -->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl">-->
+    <!--<bean name="customerService" class="cf.mindaugas._04_spring_xml.service.CustomerServiceImpl">-->
         <!--<constructor-arg index="0" ref="hCustRep"/>-->
         <!--&lt;!&ndash; you could use an additional propety tag to add a setter injection here as well &ndash;&gt;-->
     <!--</bean>-->
 
     <!-- Autowiring by constructor -->
     <bean name="customerService"
-          class="cf.mindaugas.spring_xml.service.CustomerServiceImpl"
+          class="cf.mindaugas._04_spring_xml.service.CustomerServiceImpl"
           autowire="constructor" />
     <!-- byName - uses name of the setter -->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" autowire="byName" />-->
+    <!--<bean name="customerService" class="cf.mindaugas._04_spring_xml.service.CustomerServiceImpl" autowire="byName" />-->
     <!-- byType will not work if there are multiple possible matches of the type-->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" autowire="byType" />-->
+    <!--<bean name="customerService" class="cf.mindaugas._04_spring_xml.service.CustomerServiceImpl" autowire="byType" />-->
 
     <!-- bean scopes: prototype and singletone -->
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" scope="prototype">-->
+    <!--<bean name="customerService" class="cf.mindaugas._04_spring_xml.service.CustomerServiceImpl" scope="prototype">-->
         <!--<property name="customerRepository" ref="memCustRep"/>-->
     <!--</bean>-->
 
@@ -43,8 +43,8 @@
     <!--<context:annotation-config/>-->
     <!--<context:property-placeholder location="app.properties"/>-->
 
-    <!--<bean name="customerService" class="cf.mindaugas.spring_xml.service.CustomerServiceImpl" autowire="constructor" />-->
-    <!--<bean name="customerRepository" class="cf.mindaugas.spring_xml.repository.HibernateCustomerRepositoryImpl">-->
+    <!--<bean name="customerService" class="cf.mindaugas._04_spring_xml.service.CustomerServiceImpl" autowire="constructor" />-->
+    <!--<bean name="customerRepository" class="cf.mindaugas._04_spring_xml.repository.HibernateCustomerRepositoryImpl">-->
         <!--&lt;!&ndash;<property name="dbUsername" value="${dbUsername}" />&ndash;&gt;-->
     <!--</bean>-->
 
