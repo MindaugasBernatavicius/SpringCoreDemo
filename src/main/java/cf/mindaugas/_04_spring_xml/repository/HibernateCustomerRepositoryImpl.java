@@ -21,7 +21,7 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 		
 		Customer customer = new Customer();
 		
-		customer.setFirstname("Jonas");
+		customer.setFirstname("Jonas from db");
 		customer.setLastname(
 				(dbUsername == null || dbUsername.equals(""))
                         ? "Jonaitis" : dbUsername);

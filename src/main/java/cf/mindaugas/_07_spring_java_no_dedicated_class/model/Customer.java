@@ -1,4 +1,4 @@
-package cf.mindaugas._02_nospring.model;
+package cf.mindaugas._07_spring_java_no_dedicated_class.model;
 
 public class Customer {
 	private String firstname;

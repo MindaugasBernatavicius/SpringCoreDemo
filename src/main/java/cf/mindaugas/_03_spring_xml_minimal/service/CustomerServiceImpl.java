@@ -7,22 +7,30 @@ import java.util.List;
 
 public class CustomerServiceImpl implements CustomerService {
 
-	// private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
-    private CustomerRepository customerRepository;
+	// 0. No dependency Injection
+	// private CustomerRepository customerRepository = new DatabaseCustomerRepository();
+	//private CustomerRepository customerRepository = new DatabaseCustomerRepositoryImpl();
 
-	// used for setter injection
-	// public void setCustomerRepository(CustomerRepository customerRepository) {
-	// 	this.customerRepository = customerRepository;
-	// }
+	private CustomerRepository customerRepository;
 
-	// public CustomerServiceImpl() {
-	// }
-
-	// used for constructor injection
-	public CustomerServiceImpl(CustomerRepository customerRepository, String variable) {
-        System.out.println("Hello " + variable);
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
+
+	public CustomerServiceImpl(CustomerRepository customerRepository, String name) {
+		this.customerRepository = customerRepository;
+		System.out.println(name);
+	}
+
+	// No default constructor found;
+	// ... nested exception is java.lang.NoSuchMethodException:
+	// ... cf.mindaugas._03_spring_xml_minimal.service.CustomerServiceImpl.<init>()
+	public CustomerServiceImpl() {
+	}
+
+	public void setCustomerRepository(CustomerRepository customerRepository) {
+	     this.customerRepository = customerRepository;
+	 }
 
 	@Override
 	public List<Customer> findAll() {

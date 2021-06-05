@@ -10,24 +10,26 @@ import java.util.List;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
+    @Autowired
     private CustomerRepository customerRepository;
 
-    @Autowired
-    public void setCustomerRepository(CustomerRepository customerRepository) {
-        System.out.println("Using setter autowiring injection!");
-        this.customerRepository = customerRepository;
-    }
-
     @Override
-	public List<Customer> findAll() {
-		return customerRepository.findAll();
-	}
+    public List<Customer> findAll() {
+        return customerRepository.findAll();
+    }
 }
 
-// @Autowired
+
+// 0
 // private CustomerRepository customerRepository;
+//
+// @Autowired
+// public void setCustomerRepository(CustomerRepository customerRepository) {
+//     System.out.println("Using setter autowiring injection!");
+//     this.customerRepository = customerRepository;
+// }
 
-
+// 1
 // private CustomerRepository customerRepository;
 //
 // @Autowired
@@ -35,3 +37,9 @@ public class CustomerServiceImpl implements CustomerService {
 //     System.out.println("Using constructor autowiring injection!");
 //     this.customerRepository = customerRepository;
 // }
+
+// 2
+// @Autowired
+// private CustomerRepository customerRepository;
+
+

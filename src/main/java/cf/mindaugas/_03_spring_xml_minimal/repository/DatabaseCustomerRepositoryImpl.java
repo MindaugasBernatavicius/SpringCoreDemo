@@ -1,23 +1,19 @@
-package cf.mindaugas._02_nospring.repository;
+package cf.mindaugas._03_spring_xml_minimal.repository;
+
+import cf.mindaugas._03_spring_xml_minimal.model.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cf.mindaugas._02_nospring.model.Customer;
-
-public class HibernateCustomerRepositoryImpl implements CustomerRepository {
+public class DatabaseCustomerRepositoryImpl implements CustomerRepository {
 
 	@Override
 	public List<Customer> findAll() {
 		List<Customer> customers = new ArrayList<>();
-		
 		Customer customer = new Customer();
-		
-		customer.setFirstname("Jonas");
+		customer.setFirstname("Jonas from database");
 		customer.setLastname("Jonaitis");
-		
 		customers.add(customer);
-		
 		return customers;
 	}
 }

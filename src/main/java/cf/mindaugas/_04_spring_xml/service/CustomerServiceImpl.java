@@ -13,17 +13,25 @@ public class CustomerServiceImpl implements CustomerService {
     //     this.customerRepository = customerRepository;
     // }
 
-    //  autowire by name
+    // autowire by name
     // private CustomerRepository customerRepository;
     // public void sethCustRep(CustomerRepository customerRepository) {
     //     this.customerRepository = customerRepository;
     // }
 
-    // constructor injection and autowire by constructor
     private CustomerRepository customerRepository;
-    public CustomerServiceImpl(CustomerRepository customerRepository) {
+    public void setmemCustRep(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
+
+    // constructor injection and autowire by constructor
+    //private CustomerRepository customerRepository;
+    //public CustomerServiceImpl(CustomerRepository customerRepository) {
+    //    this.customerRepository = customerRepository;
+    //}
+    //
+    //public CustomerServiceImpl() {
+    //}
 
     // // byType
     // private CustomerRepository customerRepository;

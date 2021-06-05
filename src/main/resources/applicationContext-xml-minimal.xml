@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="hrep"
-          class="cf.mindaugas._03_spring_xml_minimal.repository.HibernateCustomerRepositoryImpl" />
-    <bean name="memrep"
-          class="cf.mindaugas._03_spring_xml_minimal.repository.InMemoryRepositoryImpl" />
+    <bean name="dbrepo" class="cf.mindaugas._03_spring_xml_minimal.repository.DatabaseCustomerRepositoryImpl" />
+    <bean name="memrepo" class="cf.mindaugas._03_spring_xml_minimal.repository.InMemoryCustomerRepository" />
 
     <!--Setter injection -->
     <!--We describe this as: "wiring beans by name using setter injection" -->
-    <!--<bean name="customerService" class="cf.mindaugas._03_spring_xml_minimal.service.CustomerServiceImpl">-->
-        <!--<property name="customerRepository" ref="hrep"/>-->
-    <!--</bean>-->
+<!--    <bean name="customerService" class="cf.mindaugas._03_spring_xml_minimal.service.CustomerServiceImpl">-->
+<!--        <property name="customerRepository" ref="memrepo"/>-->
+<!--    </bean>-->
 
     <!--Constructor injection-->
-    <bean name="customerService"
-          class="cf.mindaugas._03_spring_xml_minimal.service.CustomerServiceImpl">
-        <constructor-arg index="0" ref="memrep"/>
+    <bean name="customerService" class="cf.mindaugas._03_spring_xml_minimal.service.CustomerServiceImpl">
+        <constructor-arg index="0" ref="dbrepo"/>
         <constructor-arg index="1" value="Mindaugas"/>
     </bean>
-
 </beans>

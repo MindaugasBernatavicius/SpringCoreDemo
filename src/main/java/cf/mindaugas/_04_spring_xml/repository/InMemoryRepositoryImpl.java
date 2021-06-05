@@ -13,7 +13,7 @@ public class InMemoryRepositoryImpl implements CustomerRepository {
 
         Customer customer = new Customer();
 
-        customer.setFirstname("Petras");
+        customer.setFirstname("Petras from memory");
         customer.setLastname("Petraitis");
 
         customers.add(customer);

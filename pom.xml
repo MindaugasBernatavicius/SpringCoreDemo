@@ -45,20 +45,20 @@
                     <!--</archive>-->
                 <!--</configuration>-->
             <!--</plugin>-->
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2-beta-5</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>cf.mindaugas._03_spring_xml_minimal.Application</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                <version>2.2-beta-5</version>-->
+<!--                <configuration>-->
+<!--                    <archive>-->
+<!--                        <manifest>-->
+<!--                            <mainClass>cf.mindaugas._03_spring_xml_minimal.Application</mainClass>-->
+<!--                        </manifest>-->
+<!--                    </archive>-->
+<!--                    <descriptorRefs>-->
+<!--                        <descriptorRef>jar-with-dependencies</descriptorRef>-->
+<!--                    </descriptorRefs>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

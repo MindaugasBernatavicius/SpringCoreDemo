@@ -1,6 +1,7 @@
-package cf.mindaugas._05_spring_annotations.repository;
+package cf.mindaugas._07_spring_java_no_dedicated_class.repository;
 
-import cf.mindaugas._05_spring_annotations.model.Customer;
+import cf.mindaugas._07_spring_java_no_dedicated_class.model.Customer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,17 +10,16 @@ import java.util.List;
 @Repository("customerRepository")
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
+    @Value("${dbUsername}")
+    private String dbUsername;
+
 	@Override
 	public List<Customer> findAll() {
 		List<Customer> customers = new ArrayList<>();
-		
 		Customer customer = new Customer();
-		
 		customer.setFirstname("Jonas from db");
-		customer.setLastname("Jonaitis");
-		
+        customer.setLastname((dbUsername == null || dbUsername.equals("")) ? "Jonaitis" : dbUsername);
 		customers.add(customer);
-		
 		return customers;
 	}
 }
