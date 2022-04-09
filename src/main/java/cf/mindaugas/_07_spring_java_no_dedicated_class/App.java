@@ -12,7 +12,10 @@ import org.springframework.context.annotation.Configuration;
 public class App {
     public static void main(String[] args) {
         ApplicationContext appContext = new AnnotationConfigApplicationContext(App.class);
-        CustomerService service1 = appContext.getBean("customerService", CustomerService.class);
+        // CustomerService service1 = appContext.getBean("customerService", CustomerService.class);
+        
+        // you don't need named @Service or @Repository if you don't query by name, property autowiring does not require name also
+        CustomerService service1 = appContext.getBean(CustomerService.class);
         System.out.println(service1.findAll().get(0).getFirstname());
 
         HibernateCustomerRepositoryImpl repo = appContext.getBean("customerRepository", HibernateCustomerRepositoryImpl.class);
